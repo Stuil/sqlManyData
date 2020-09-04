@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.UserremarksMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Userremarks">
+        <result column="id" property="id" />
+        <result column="remark" property="remark" />
+        <result column="operdate" property="operdate" />
+        <result column="operator" property="operator" />
+        <result column="client_id" property="clientId" />
+    </resultMap>
+
+</mapper>

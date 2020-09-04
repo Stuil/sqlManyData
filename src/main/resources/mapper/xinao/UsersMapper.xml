@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.UsersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Users">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="address" property="address" />
+        <result column="work_unit" property="workUnit" />
+        <result column="phone" property="phone" />
+        <result column="open_date" property="openDate" />
+        <result column="work_date" property="workDate" />
+        <result column="pay_date" property="payDate" />
+        <result column="user_type" property="userType" />
+        <result column="meter_type" property="meterType" />
+        <result column="meter_no" property="meterNo" />
+        <result column="meter_dir" property="meterDir" />
+        <result column="unit_no" property="unitNo" />
+        <result column="updated" property="updated" />
+        <result column="manage_nu1" property="manageNu1" />
+        <result column="ms_number" property="msNumber" />
+        <result column="manage_nu" property="manageNu" />
+        <result column="remark" property="remark" />
+        <result column="manage_temp" property="manageTemp" />
+        <result column="id_card" property="idCard" />
+        <result column="special" property="special" />
+        <result column="kitchen" property="kitchen" />
+        <result column="water_heater" property="waterHeater" />
+        <result column="boiler" property="boiler" />
+        <result column="family_detail" property="familyDetail" />
+        <result column="family_earning" property="familyEarning" />
+        <result column="use_id" property="useId" />
+        <result column="house_id" property="houseId" />
+        <result column="family_no" property="familyNo" />
+        <result column="install_position" property="installPosition" />
+        <result column="sex" property="sex" />
+        <result column="stopuser" property="stopuser" />
+        <result column="operator" property="operator" />
+        <result column="client_id" property="clientId" />
+        <result column="cardtype" property="cardtype" />
+        <result column="TotalUsed" property="TotalUsed" />
+    </resultMap>
+
+</mapper>

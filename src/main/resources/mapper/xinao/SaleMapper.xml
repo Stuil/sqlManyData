@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.SaleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Sale">
+        <id column="id" property="id" />
+        <result column="price" property="price" />
+        <result column="amount" property="amount" />
+        <result column="cost" property="cost" />
+        <result column="buy_date" property="buyDate" />
+        <result column="operator" property="operator" />
+        <result column="usertype" property="usertype" />
+        <result column="updated" property="updated" />
+        <result column="unit_no" property="unitNo" />
+        <result column="name" property="name" />
+        <result column="address" property="address" />
+        <result column="client_id" property="clientId" />
+        <result column="flowid" property="flowid" />
+        <result column="mprice" property="mprice" />
+        <result column="mamount" property="mamount" />
+        <result column="mcost" property="mcost" />
+        <result column="hprice" property="hprice" />
+        <result column="hamount" property="hamount" />
+        <result column="hcost" property="hcost" />
+    </resultMap>
+
+</mapper>

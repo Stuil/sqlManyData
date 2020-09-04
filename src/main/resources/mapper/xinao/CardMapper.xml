@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.CardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Card">
+        <id column="id" property="id" />
+        <result column="card_date" property="cardDate" />
+        <result column="card_cost" property="cardCost" />
+        <result column="operator" property="operator" />
+        <result column="usertype" property="usertype" />
+        <result column="updated" property="updated" />
+        <result column="unit_no" property="unitNo" />
+        <result column="remark" property="remark" />
+        <result column="number" property="number" />
+        <result column="client_id" property="clientId" />
+    </resultMap>
+
+</mapper>

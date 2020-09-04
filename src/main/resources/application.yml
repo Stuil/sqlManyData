@@ -1,0 +1,40 @@
+server:
+  port: 9890
+  servlet:
+    context-path: /
+
+
+spring:
+  datasource:
+    master:
+      username: sa
+      password: '@#Pass0903'
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      jdbc-url: jdbc:sqlserver://172.16.39.168:1433;DatabaseName=zhonghaogas
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+    other:
+      username: root
+      password: abc123
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/gas_zh1?useUnicode=true&serverTimezone=UTC&characterEncoding=utf8
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+  main:
+    allow-bean-definition-overriding: true
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0

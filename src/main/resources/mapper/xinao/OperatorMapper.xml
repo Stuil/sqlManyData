@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.OperatorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Operator">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="opn" property="opn" />
+        <result column="change" property="change" />
+        <result column="dele" property="dele" />
+        <result column="meter" property="meter" />
+        <result column="card" property="card" />
+        <result column="edit" property="edit" />
+        <result column="supply" property="supply" />
+        <result column="sale" property="sale" />
+        <result column="rtn" property="rtn" />
+        <result column="operator" property="operator" />
+        <result column="sys" property="sys" />
+        <result column="updated" property="updated" />
+        <result column="gas" property="gas" />
+        <result column="givegas" property="givegas" />
+        <result column="gas1" property="gas1" />
+        <result column="transfercard" property="transfercard" />
+        <result column="onestere" property="onestere" />
+    </resultMap>
+
+</mapper>

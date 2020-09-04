@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.MeterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Meter">
+        <id column="id" property="id" />
+        <result column="meter_date" property="meterDate" />
+        <result column="meter_cost" property="meterCost" />
+        <result column="cost" property="cost" />
+        <result column="old_type" property="oldType" />
+        <result column="new_type" property="newType" />
+        <result column="operator" property="operator" />
+        <result column="usertype" property="usertype" />
+        <result column="updated" property="updated" />
+        <result column="memo" property="memo" />
+        <result column="unit_no" property="unitNo" />
+        <result column="ms_number" property="msNumber" />
+        <result column="old_number" property="oldNumber" />
+        <result column="old_meterno" property="oldMeterno" />
+        <result column="new_meterno" property="newMeterno" />
+        <result column="client_id" property="clientId" />
+    </resultMap>
+
+</mapper>

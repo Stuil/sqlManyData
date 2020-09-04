@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.xinao.UsertypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.xinao.Usertype">
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="gas_id" property="gasId" />
+        <result column="price" property="price" />
+        <result column="updated" property="updated" />
+        <result column="mingas" property="mingas" />
+        <result column="maxgas" property="maxgas" />
+        <result column="daygas" property="daygas" />
+        <result column="monthgas" property="monthgas" />
+        <result column="mprice" property="mprice" />
+        <result column="hprice" property="hprice" />
+        <result column="quota" property="quota" />
+        <result column="mquota" property="mquota" />
+        <result column="priceclass" property="priceclass" />
+        <result column="heatingprice" property="heatingprice" />
+        <result column="heatingMprice" property="heatingMprice" />
+        <result column="heatingHprice" property="heatingHprice" />
+        <result column="heatingquota" property="heatingquota" />
+        <result column="heatingMquota" property="heatingMquota" />
+        <result column="openfee" property="openfee" />
+        <result column="upkeepfee" property="upkeepfee" />
+        <result column="heaterfee" property="heaterfee" />
+        <result column="boilerfee" property="boilerfee" />
+        <result column="certificatefee" property="certificatefee" />
+        <result column="FinalPrice" property="FinalPrice" />
+        <result column="FinalMprice" property="FinalMprice" />
+        <result column="FinalHprice" property="FinalHprice" />
+        <result column="FinalQuota" property="FinalQuota" />
+        <result column="FinalMquota" property="FinalMquota" />
+    </resultMap>
+
+</mapper>
