@@ -1,9 +1,9 @@
 package com.xinao.sync.service.gas;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
 import com.xinao.sync.entity.gas.GasUserEntity;
 import com.xinao.sync.mapper.gas.GasUserMapper;
-import com.xinao.sync.service.gas.GasUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +17,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class GasUserServiceImpl extends ServiceImpl<GasUserMapper, GasUserEntity> implements GasUserService {
 
+
+    @Override
+    public boolean insetUser(GasUserEntity gasUserEntity) {
+        return this.save(gasUserEntity);
+    }
+
+    @Override
+    public boolean updateUser(GasUserEntity gasUserEntity) {
+        return this.updateById(gasUserEntity);
+    }
+
+    @Override
+    public GasUserEntity getByAcc(String account) {
+        return this.getById(account);
+    }
 }

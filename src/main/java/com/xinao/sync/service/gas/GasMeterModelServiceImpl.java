@@ -1,9 +1,8 @@
 package com.xinao.sync.service.gas;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xinao.sync.entity.gas.GasMeterModelEntity;
 import com.xinao.sync.mapper.gas.GasMeterModelMapper;
-import com.xinao.sync.service.gas.GasMeterModelService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

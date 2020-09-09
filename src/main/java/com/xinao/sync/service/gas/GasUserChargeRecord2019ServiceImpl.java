@@ -1,9 +1,8 @@
 package com.xinao.sync.service.gas;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xinao.sync.entity.gas.GasUserChargeRecord2019Entity;
 import com.xinao.sync.mapper.gas.GasUserChargeRecord2019Mapper;
-import com.xinao.sync.service.gas.GasUserChargeRecord2019Service;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +16,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GasUserChargeRecord2019ServiceImpl extends ServiceImpl<GasUserChargeRecord2019Mapper, GasUserChargeRecord2019Entity> implements GasUserChargeRecord2019Service {
 
+    @Override
+    public boolean saveOrUpdates(GasUserChargeRecord2019Entity entityList) {
+        return this.saveOrUpdate(entityList);
+    }
 }

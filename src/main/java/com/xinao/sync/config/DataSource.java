@@ -3,14 +3,17 @@ package com.xinao.sync.config;
 import java.lang.annotation.*;
 
 /**
- * @description: 注解
+ * @title: DataSource
+ * @description:
+ * @date: 2020/8/12
  * @author: zwh
+ * @copyright: Copyright (c) 2020
  * @version: 1.0
  */
 
-@Target({ElementType.METHOD,ElementType.TYPE,ElementType.PARAMETER})
+@Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface DataSource {
-    String value() default "masterDataSource";//该值即key的值
+    DataSourceEnum value() default DataSourceEnum.DB1;
 }

@@ -226,7 +226,7 @@ package com.xinao.sync.entity.gas;
             * IC卡表/NB物联网表上次充值时间
             */
         @TableField("lastRechargeTime")
-    private Integer lastRechargeTime;
+    private Long lastRechargeTime;
 
             /**
             * IC卡表/NB物联网表上次充值金额,单位:厘

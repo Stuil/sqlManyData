@@ -1,7 +1,7 @@
 package com.xinao.sync.service.gas;
 
-import com.xinao.sync.entity.gas.GasUseTypeEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xinao.sync.entity.gas.GasUseTypeEntity;
 
 import java.util.List;
 

@@ -25,11 +25,11 @@ package com.xinao.sync.entity.xinao;
 
     private Integer id;
 
-    private BigDecimal price;
+    private Double price;
 
     private Integer amount;
 
-    private BigDecimal cost;
+    private Double cost;
 
     private LocalDateTime buyDate;
 
@@ -49,13 +49,13 @@ package com.xinao.sync.entity.xinao;
 
     private String flowid;
 
-    private BigDecimal mprice;
+    private Double mprice;
 
     private Integer mamount;
 
-    private BigDecimal mcost;
+    private Double mcost;
 
-    private BigDecimal hprice;
+    private Double hprice;
 
     private Integer hamount;
 

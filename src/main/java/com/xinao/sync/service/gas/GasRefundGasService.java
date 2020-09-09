@@ -1,7 +1,7 @@
 package com.xinao.sync.service.gas;
 
-import com.xinao.sync.entity.gas.GasRefundGasEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xinao.sync.entity.gas.GasRefundGasEntity;
 
 /**
  * <p>
@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-09-04
  */
 public interface GasRefundGasService extends IService<GasRefundGasEntity> {
-
+    boolean saveOrUpdates(GasRefundGasEntity refundGasEntities);
 }

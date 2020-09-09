@@ -1,9 +1,9 @@
 package com.xinao.sync.service.gas;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
 import com.xinao.sync.entity.gas.GasUserChargeRecordEntity;
 import com.xinao.sync.mapper.gas.GasUserChargeRecordMapper;
-import com.xinao.sync.service.gas.GasUserChargeRecordService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

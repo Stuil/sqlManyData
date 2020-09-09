@@ -1,7 +1,7 @@
 package com.xinao.sync.service.gas;
 
-import com.xinao.sync.entity.gas.GasMeterEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xinao.sync.entity.gas.GasMeterEntity;
 
 /**
  * <p>
@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-09-04
  */
 public interface GasMeterService extends IService<GasMeterEntity> {
-
+    boolean insertMeter(GasMeterEntity gasMeterEntity);
 }

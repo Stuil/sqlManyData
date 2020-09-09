@@ -6,24 +6,29 @@ server:
 
 spring:
   datasource:
-    master:
-      username: sa
-      password: '@#Pass0903'
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      jdbc-url: jdbc:sqlserver://172.16.39.168:1433;DatabaseName=zhonghaogas
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
-    other:
-      username: root
-      password: abc123
-      driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:3306/gas_zh1?useUnicode=true&serverTimezone=UTC&characterEncoding=utf8
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
+    druid:
+      db1:
+        username: sa
+        password: '@#Pass0903'
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://172.16.39.168:1433;DatabaseName=zhonghaogas
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+      db2:
+        username: root
+        password: abc123
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/gas_zh1?useUnicode=true&serverTimezone=UTC&characterEncoding=utf8
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
   main:
     allow-bean-definition-overriding: true
+
+# 是否开启sql打印  0否  1是，仅限在类中配置mybatis/mp
+config:
+  isLogImpl: 1
 
 mybatis-plus:
   configuration:

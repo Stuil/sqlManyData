@@ -1,7 +1,9 @@
 package com.xinao.sync.service.gas;
 
-import com.xinao.sync.entity.gas.GasAreaCommunityEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xinao.sync.entity.gas.GasAreaCommunityEntity;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +15,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface GasAreaCommunityService extends IService<GasAreaCommunityEntity> {
 
+    Map<String,Object> getListAreaToMap();
+
+    GasAreaCommunityEntity getOnes(String name);
+
+    boolean saves(GasAreaCommunityEntity gasAreaCommunityEntity);
+
+    boolean updates(GasAreaCommunityEntity gasAreaCommunityEntity);
 }
