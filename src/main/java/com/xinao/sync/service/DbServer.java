@@ -74,7 +74,7 @@ public class DbServer {
         System.out.println(1);
     }
 
-    //解决事务失效
+    //解决事务失效  代理模式失效
     private DbServer getService(){
         return SpringUtil.getBean(this.getClass());   //SpringUtil工具类见下面代码
     }
