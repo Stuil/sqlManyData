@@ -30,7 +30,7 @@ spring:
 config:
   isLogImpl: 1
 
-#表头列表
+#表头列表 - 表示一个集合
 mp:
   tableNames:
     - gas_meter_reading_
