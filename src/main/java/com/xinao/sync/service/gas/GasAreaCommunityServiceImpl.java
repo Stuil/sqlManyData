@@ -2,6 +2,8 @@ package com.xinao.sync.service.gas;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xinao.sync.config.DataSource;
+import com.xinao.sync.config.DataSourceEnum;
 import com.xinao.sync.entity.gas.GasAreaCommunityEntity;
 import com.xinao.sync.mapper.gas.GasAreaCommunityMapper;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ import java.util.Map;
  * @since 2020-09-04
  */
 @Service
+@DataSource(DataSourceEnum.DB2)
 public class GasAreaCommunityServiceImpl extends ServiceImpl<GasAreaCommunityMapper, GasAreaCommunityEntity> implements GasAreaCommunityService {
 
     @Override

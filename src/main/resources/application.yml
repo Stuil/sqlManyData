@@ -28,7 +28,7 @@ spring:
 
 # 是否开启sql打印  0否  1是，仅限在类中配置mybatis/mp
 config:
-  isLogImpl: 1
+  isLogImpl: 0
 
 mybatis-plus:
   configuration:

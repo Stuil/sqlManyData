@@ -2,6 +2,8 @@ package com.xinao.sync.service.gas;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.xinao.sync.config.DataSource;
+import com.xinao.sync.config.DataSourceEnum;
 import com.xinao.sync.entity.gas.GasUseTypeEntity;
 import com.xinao.sync.mapper.gas.GasUseTypeMapper;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import java.util.List;
  * @since 2020-09-04
  */
 @Service
+@DataSource(DataSourceEnum.DB2)
 public class GasUseTypeServiceImpl extends ServiceImpl<GasUseTypeMapper, GasUseTypeEntity> implements GasUseTypeService {
 
     @Override

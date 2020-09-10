@@ -28,10 +28,6 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String index(Integer id){
-        // 主库  error
-       // gastypeService.getList();
-        indexServer.dataSync(id);
-        //        // 从库  success
-        return "1";
+        return indexServer.dataSync(id);
     }
 }

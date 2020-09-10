@@ -3,6 +3,8 @@ package com.xinao.sync.service.gas;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xinao.sync.config.DataSource;
+import com.xinao.sync.config.DataSourceEnum;
 import com.xinao.sync.entity.gas.GasBookNoEntity;
 import com.xinao.sync.mapper.gas.GasBookNoMapper;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-04
  */
 @Service
+@DataSource(DataSourceEnum.DB2)
 public class GasBookNoServiceImpl extends ServiceImpl<GasBookNoMapper, GasBookNoEntity> implements GasBookNoService {
 
     @Override
