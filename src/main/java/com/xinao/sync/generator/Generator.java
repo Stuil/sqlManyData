@@ -30,7 +30,7 @@ public class Generator {
     // 包名
     private static final String packageName = "com.xinao.sync";
     private static final String moduleName = "";
-    private static final String[] tableName = ("gas_area_community,gas_book_no,gas_mend_gas,gas_meter,gas_meter_model,gas_refund_gas,gas_user_charge_record_2018,gas_user_charge_record_2019,gas_user_charge_record_2020,gas_user_charge_record_,gas_user,gas_use_type").split(",");
+    private static final String[] tableName = ("gas_meter_reading_").split(",");
     private static final String tablePrefix = "";
 
     public static void main(String[] args) {
@@ -82,7 +82,7 @@ public class Generator {
         String driverName = "com.mysql.cj.jdbc.Driver";
         dsc.setDriverName(driverName);
         dsc.setUsername("root");
-        dsc.setPassword("@#abc123");
+        dsc.setPassword("1231abc123");
         return dsc;
     }
 

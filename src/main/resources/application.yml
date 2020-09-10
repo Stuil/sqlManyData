@@ -28,7 +28,13 @@ spring:
 
 # 是否开启sql打印  0否  1是，仅限在类中配置mybatis/mp
 config:
-  isLogImpl: 0
+  isLogImpl: 1
+
+#表头列表
+mp:
+  tableNames:
+    - gas_meter_reading_
+    - gas_user_charge_record_
 
 mybatis-plus:
   configuration:

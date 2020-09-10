@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinao.sync.mapper.gas.GasMeterReadingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xinao.sync.entity.gas.GasMeterReadingEntity">
+        <id column="id" property="id" />
+        <result column="accountNumber" property="accountNumber" />
+        <result column="meterId" property="meterId" />
+        <result column="useType" property="useType" />
+        <result column="currentPointer" property="currentPointer" />
+        <result column="readingTime" property="readingTime" />
+        <result column="lastPointer" property="lastPointer" />
+        <result column="lastReadingTime" property="lastReadingTime" />
+        <result column="lastUse" property="lastUse" />
+        <result column="dosage" property="dosage" />
+        <result column="readerId" property="readerId" />
+        <result column="readerName" property="readerName" />
+        <result column="imageUrl" property="imageUrl" />
+        <result column="readingType" property="readingType" />
+        <result column="status" property="status" />
+        <result column="canRevoke" property="canRevoke" />
+        <result column="revokeReason" property="revokeReason" />
+        <result column="revokeBy" property="revokeBy" />
+        <result column="businessHall" property="businessHall" />
+        <result column="revokeByName" property="revokeByName" />
+        <result column="revokeTime" property="revokeTime" />
+        <result column="auditeason" property="auditeason" />
+        <result column="auditBy" property="auditBy" />
+        <result column="auditStatus" property="auditStatus" />
+        <result column="auditTime" property="auditTime" />
+        <result column="opBy" property="opBy" />
+        <result column="opAt" property="opAt" />
+        <result column="delFlag" property="delFlag" />
+        <result column="devCode" property="devCode" />
+        <result column="allotReaderId" property="allotReaderId" />
+        <result column="allotReaderName" property="allotReaderName" />
+        <result column="openId" property="openId" />
+        <result column="changePointReason" property="changePointReason" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, accountNumber, meterId, useType, currentPointer, readingTime, lastPointer, lastReadingTime, lastUse, dosage, readerId, readerName, imageUrl, readingType, status, canRevoke, revokeReason, revokeBy, businessHall, revokeByName, revokeTime, auditeason, auditBy, auditStatus, auditTime, opBy, opAt, delFlag, devCode, allotReaderId, allotReaderName, openId, changePointReason
+    </sql>
+
+</mapper>

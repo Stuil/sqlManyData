@@ -97,13 +97,6 @@ public class IndexServer {
      */
     public String dataSync(Integer areaId) {
         try {
-            AtomicInteger areaCount = new AtomicInteger();
-            AtomicInteger bookCount = new AtomicInteger();
-            AtomicInteger count = new AtomicInteger();
-            AtomicInteger meterCount = new AtomicInteger();
-            AtomicInteger buyGasCount = new AtomicInteger();
-            AtomicInteger mendGasCount = new AtomicInteger();
-            AtomicInteger refundGasCount = new AtomicInteger();
             List<GasUserChargeRecordEntity> chargeRecordList = new ArrayList<>();
             List<GasMendGasEntity> mendGasList = new ArrayList<>();
             List<GasRefundGasEntity> refundGasList = new ArrayList<>();
@@ -118,30 +111,44 @@ public class IndexServer {
             unitList.forEach(unit -> {
                 // 计算小区人数
                 List<Users> usersList = usersService.list(new QueryWrapper<Users>().eq("unit_no", unit.getId()));
+
+                // 小区
                 GasAreaCommunityEntity areaCommunity = new GasAreaCommunityEntity();
-                areaCommunity.setId(getUUID());
                 areaCommunity.setName(unit.getName() + AREA_APPEND);
-                areaCommunity.setAddress(areaCommunity.getName());
-                areaCommunity.setOldKeywords(areaCommunity.getName());
+                areaCommunity.setAddress(unit.getName() + AREA_APPEND);
+                areaCommunity.setOldKeywords(unit.getName() + AREA_APPEND);
                 areaCommunity.setOpBy("system import");
                 areaCommunity.setOpAt(Times.getTS());
                 areaCommunity.setDelFlag(false);
                 areaCommunity.setAreaCode("150203");
                 // 是否存在小区
+                GasAreaCommunityEntity commNames = areaCommunityService.getOnes(areaCommunity.getName());
+                if(Lang.isNotEmpty(commNames)){
+                    areaCommunity.setId(commNames.getId());
+                }else {
+                    areaCommunity.setId(getUUID());
+                }
                 areaCommunityEntities.add(areaCommunity);
-                // 查询户号 按地址查 适合 金凤、新奥
+
+                // 户号
                 GasBookNoEntity bookNoEntity = new GasBookNoEntity();
-                GasBookNoEntity books = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>().lt("id", 7000).orderByDesc("id").last("limit 1"));
-                bookNoEntity.setId(books.getId() + 1);
-                bookNoEntity.setAddress(areaCommunity.getName());
                 bookNoEntity.setCommunityId(areaCommunity.getId());
                 bookNoEntity.setDistributed(true);
                 bookNoEntity.setOpBy("system import");
                 bookNoEntity.setOpAt(Times.getTS());
                 bookNoEntity.setDelFlag(false);
                 bookNoEntity.setUserCount(usersList.size());
-                // 户号
+                // 查询户号 按地址查 适合 金凤、新奥
+                GasBookNoEntity bookOne = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>()
+                        .eq("address", bookNoEntity.getAddress()));
+                if(Lang.isNotEmpty(bookOne)){
+                    bookNoEntity.setId(bookOne.getId());
+                }else{
+                    GasBookNoEntity books = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>().lt("id", 7000).orderByDesc("id").last("limit 1"));
+                    bookNoEntity.setId(books.getId()+1);
+                }
                 bookNoEntities.add(bookNoEntity);
+
                 // 人员同步
                 usersList.forEach(users -> {
                     // 补卡次数
@@ -212,7 +219,6 @@ public class IndexServer {
                     gasUser.setMobile(users.getPhone());
                     gasUser.setAddress(users.getAddress());
                     gasUser.setUserType(1);
-                    gasUser.setMeterId(getUUID());
                     gasUser.setOpenTime(users.getOpenDate().toEpochSecond(ZoneOffset.of("+8")));
                     gasUser.setAddGas(BigDecimal.valueOf(0));
                     gasUser.setStatus(1);
@@ -229,7 +235,12 @@ public class IndexServer {
                     gasUser.setOpAt(Times.getTS());
                     gasUser.setOpByName("系统");
                     gasUser.setOpBy("system import");
-
+                    GasUserEntity gasUserEntity = gasUserService.getByAcc(gasUser.getAccountNumber());
+                    if(Lang.isNotEmpty(gasUserEntity)){
+                        gasUser.setMeterId(gasUserEntity.getMeterId());
+                    }else{
+                        gasUser.setMeterId(getUUID());
+                    }
                     userEntityList.add(gasUser);
 
                     // 表具信息
@@ -250,7 +261,6 @@ public class IndexServer {
                     gasMeter.setOpAt(Times.getTS());
                     gasMeter.setOpByName("系统");
                     gasMeter.setOpBy("system import");
-
                     meterEntities.add(gasMeter);
                     /*   交易记录   */
                     // 购气次数
