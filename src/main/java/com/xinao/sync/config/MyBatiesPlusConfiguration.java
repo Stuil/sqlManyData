@@ -132,7 +132,7 @@ public class MyBatiesPlusConfiguration {
         //添加数据源
         multipleDataSource.setTargetDataSources(targetDataSources);
         //设置默认数据源
-        multipleDataSource.setDefaultTargetDataSource(db2);
+        multipleDataSource.setDefaultTargetDataSource(db1);
         return multipleDataSource;
     }
 

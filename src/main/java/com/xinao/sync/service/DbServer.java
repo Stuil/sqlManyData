@@ -137,21 +137,12 @@ public class DbServer {
             // 充值记录
             chargeRecordList.forEach(chargeRecord -> {
                 MyBatiesPlusConfiguration.getTableName(longToString(chargeRecord.getPayTime()));
-                recordService.saveOrUpdate(chargeRecord);
-                /*if (longToString(chargeRecord.getPayTime()).equals("2018")) {
-                    GasUserChargeRecord2018Entity record2018Entity = new GasUserChargeRecord2018Entity();
-                    SyncUtil.copyProperties(chargeRecord, record2018Entity);
-                    record2018Service.saveOrUpdate(record2018Entity);
-                } else if (longToString(chargeRecord.getPayTime()).equals("2019")) {
-                    GasUserChargeRecord2019Entity record2019Entity = new GasUserChargeRecord2019Entity();
-                    SyncUtil.copyProperties(chargeRecord, record2019Entity);
-                    record2019Service.saveOrUpdate(record2019Entity);
-                } else if (longToString(chargeRecord.getPayTime()).equals("2020")) {
-                    GasUserChargeRecord2020Entity record2020Entity = new GasUserChargeRecord2020Entity();
-                    SyncUtil.copyProperties(chargeRecord, record2020Entity);
-                    record2020Service.saveOrUpdate(record2020Entity);
-                }*/
-                buyGasCount.getAndIncrement();
+                boolean rec=recordService.saveOrUpdate(chargeRecord);
+                if (!rec) {
+                    log.error("表具：{}", JSONObject.toJSONString(chargeRecord));
+                } else {
+                    buyGasCount.getAndIncrement();
+                }
             });
             // mendGasService.saveBatch(mendGasList);
             mendGasList.forEach(mends -> {
