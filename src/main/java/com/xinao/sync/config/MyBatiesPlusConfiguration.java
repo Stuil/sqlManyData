@@ -49,7 +49,6 @@ public class MyBatiesPlusConfiguration {
 
 
     public static ThreadLocal<String> myTableName = new ThreadLocal<>();
-    public static ThreadLocal<String> myTableName1 = new ThreadLocal<>();
 
     /**
      * 分页插件，自动识别数据库类型
