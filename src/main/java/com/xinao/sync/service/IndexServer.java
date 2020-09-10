@@ -133,6 +133,7 @@ public class IndexServer {
                 // 户号
                 GasBookNoEntity bookNoEntity = new GasBookNoEntity();
                 bookNoEntity.setCommunityId(areaCommunity.getId());
+                bookNoEntity.setAddress(areaCommunity.getName());
                 bookNoEntity.setDistributed(true);
                 bookNoEntity.setOpBy("system import");
                 bookNoEntity.setOpAt(Times.getTS());
@@ -144,6 +145,7 @@ public class IndexServer {
                 if(Lang.isNotEmpty(bookOne)){
                     bookNoEntity.setId(bookOne.getId());
                 }else{
+                    // fixme 本号自增问题
                     GasBookNoEntity books = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>().lt("id", 7000).orderByDesc("id").last("limit 1"));
                     bookNoEntity.setId(books.getId()+1);
                 }
