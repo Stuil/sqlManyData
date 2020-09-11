@@ -4,6 +4,7 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @title: IndexUtil
@@ -18,14 +19,7 @@ public class IndexUtil {
 
 
     public static void main(String[] args) {
-        String jar_parent = null;
-        {
-            try {
-                jar_parent = new File(ResourceUtils.getURL("classpath:").getPath()).getParentFile().getParentFile().getParent();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println(jar_parent);
+        AtomicInteger atomicInteger=new AtomicInteger(8);
+        System.out.println(atomicInteger.getAndAdd(2)+"----"+atomicInteger);
     }
 }

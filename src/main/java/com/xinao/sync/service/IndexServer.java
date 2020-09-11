@@ -1,7 +1,6 @@
 package com.xinao.sync.service;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xinao.sync.entity.gas.*;
 import com.xinao.sync.entity.xinao.Card;
@@ -104,14 +103,16 @@ public class IndexServer {
             List<GasBookNoEntity> bookNoEntities = new ArrayList<>();
             List<GasUserEntity> userEntityList = new ArrayList<>();
             List<GasMeterEntity> meterEntities = new ArrayList<>();
+            // 获取本号
+            GasBookNoEntity books = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>().lt("id", 7000).orderByDesc("id").last("limit 1"));
+            AtomicInteger addBook= new AtomicInteger(books.getId());
             // 获取小区
             boolean condition = areaId != null && areaId != 0;
             List<UnitType> unitList = unitTypeService.list(new QueryWrapper<UnitType>().eq(condition, "id", areaId).orderByAsc("id"));
-            int XinAoConsumerCount = usersService.count(new QueryWrapper<Users>().eq(condition, "unit_no", areaId));
             unitList.forEach(unit -> {
                 // 计算小区人数
                 List<Users> usersList = usersService.list(new QueryWrapper<Users>().eq("unit_no", unit.getId()));
-
+                addBook.set(addBook.get() + 1);
                 // 小区
                 GasAreaCommunityEntity areaCommunity = new GasAreaCommunityEntity();
                 areaCommunity.setName(unit.getName() + AREA_APPEND);
@@ -146,8 +147,7 @@ public class IndexServer {
                     bookNoEntity.setId(bookOne.getId());
                 }else{
                     // fixme 本号自增问题
-                    GasBookNoEntity books = bookNoService.getOnes(new QueryWrapper<GasBookNoEntity>().lt("id", 7000).orderByDesc("id").last("limit 1"));
-                    bookNoEntity.setId(books.getId()+1);
+                    bookNoEntity.setId(addBook.get());
                 }
                 bookNoEntities.add(bookNoEntity);
 
